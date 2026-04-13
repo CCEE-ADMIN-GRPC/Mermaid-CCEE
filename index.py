@@ -20,7 +20,7 @@ async def render_diagram(request: Request):
         try:
             # 3. Chama o CLI do D2 para gerar o SVG
             # Aqui você pode injetar temas: d2 --theme=200
-            subprocess.run(["d2", f_in.name, f_out.name], check=True)
+           subprocess.run(["./bin/d2", f_in.name, f_out.name], check=True)
             
             # 4. Lê o SVG gerado
             with open(f_out.name, "r", encoding="utf-8") as svg_file:
